@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 
 export default class Layout extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentPalnetName: 'Earth',
+    }
+  }
+
+  isAPlanet() {
+    return this.state.currentPalnetName;
+  }
+
+  getName() {
+    if (this.isAPlanet()) return this.state.currentPalnetName;
+    return this.currentGalaxyName(); // Otherwise
+  }
+
   render() {
     return (
-      <h1>Hello world!</h1>
+      <div>
+        <h1>Hello {this.getName()}!</h1>
+      </div>
     );
   }
 }
