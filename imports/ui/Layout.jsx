@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
 
+import Header from '/imports/ui/Header.jsx'
+import Footer from '/imports/ui/Footer.jsx'
+
 export default class Layout extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentPalnetName: 'Earth',
-    }
-  }
-
-  isAPlanet() {
-    return this.state.currentPalnetName;
-  }
-
-  getName() {
-    if (this.isAPlanet()) return this.state.currentPalnetName;
-    return this.currentGalaxyName(); // Otherwise
-  }
-
   render() {
     return (
       <div>
-        <h1>Hello {this.getName()}!</h1>
+        <Header />
+        <Footer />
       </div>
     );
   }
